@@ -31,7 +31,7 @@ public class Review01 {
     }
     //tax処理 return有
     public static double tax (int num1,double num2) {
-        double result = 4910*0.10;
+        double result = num1*num2;
         return result;
     //※taxメソッドは消費税額（商品価格の10％）が戻り値となるメソッドにしてください
     //条件的に消費税価格の計算のみreturn
