@@ -22,15 +22,18 @@ public class Review01 {
     tax(4910,490);
 
     //main処理
-    int num1 = 5400;
-    int num2 = 4910;
-    int result = tax(5400,4910);
-       System.out.println(num1+"円の商品の税込価格は"+num2 +"円（消費税は"+result+"円です)");//結果戻り値
+//再：税込み価格を手動で入力されていたのですが、今回のプログラムで分かるのは商品の価格と、税率のみとなります。この2つの値から、消費税を計算して、税込み価格を求めるようにしましょう
+    int num1 = 4910;//商品の価格4910
+    //double num2 = 0.10;//税率10% 不要
+
+    double result = tax(4910,0.10);//戻り値
+    double num3 = result + num1;//return戻り値+商品価格
+       System.out.println(num1+"円の商品の税込価格は"+num3+"円（消費税は"+result+"円です)");//結果戻り値
     }
 
     //tax処理 return有
-    public static int tax (int num1,int num2) {
-        int result = num1-num2;//tax(5400,4910);
+    public static double tax (int num1,double num2) {
+        double result = 4910*0.10;
         return result;
     //※taxメソッドは消費税額（商品価格の10％）が戻り値となるメソッドにしてください
     //条件的に消費税価格の計算のみreturn
