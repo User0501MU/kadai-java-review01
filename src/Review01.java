@@ -16,16 +16,14 @@ mainメソッドとtaxメソッドを切り分けて作成してください
 public class Review01 {
 
     public static void main(String[] args) {
-        //追記：呼び出す
-        tax(4910,490);
 
         //main処理
 //再：税込み価格を手動で入力されていたのですが、今回のプログラムで分かるのは商品の価格と、税率のみとなります。この2つの値から、消費税を計算して、税込み価格を求めるようにしましょう
         int num1 = 4910;//商品の価格4910
 
-        double result = tax(4910,0.10);//戻り値
+        double result = tax(num1,0.10);//戻り値
 //★キャスト型変換で小数点を整数に正す。※変数に対してキャストを付ける
-        double num3 = (int)result + num1;//return戻り値+商品価格
+        int num3 = (int)result + num1;//return戻り値+商品価格
 
         System.out.println (num1+"円の商品の税込価格は"+(int)num3+"円（消費税は"+(int)result+"円です)");//結果戻り値
     }
