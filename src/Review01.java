@@ -16,21 +16,19 @@ mainメソッドとtaxメソッドを切り分けて作成してください
 public class Review01 {
 
     public static void main(String[] args) {
+        //追記：呼び出す
+        tax(4910,490);
 
-
-     //追記：呼び出す
-    tax(4910,490);
-
-    //main処理
+        //main処理
 //再：税込み価格を手動で入力されていたのですが、今回のプログラムで分かるのは商品の価格と、税率のみとなります。この2つの値から、消費税を計算して、税込み価格を求めるようにしましょう
-    int num1 = 4910;//商品の価格4910
-    //double num2 = 0.10;//税率10% 不要
+        int num1 = 4910;//商品の価格4910
 
-    double result = tax(4910,0.10);//戻り値
-    double num3 = result + num1;//return戻り値+商品価格
-       System.out.println(num1+"円の商品の税込価格は"+num3+"円（消費税は"+result+"円です)");//結果戻り値
+        double result = tax(4910,0.10);//戻り値
+//★キャスト型変換で小数点を整数に正す。※変数に対してキャストを付ける
+        double num3 = (int)result + num1;//return戻り値+商品価格
+
+        System.out.println (num1+"円の商品の税込価格は"+(int)num3+"円（消費税は"+(int)result+"円です)");//結果戻り値
     }
-
     //tax処理 return有
     public static double tax (int num1,double num2) {
         double result = 4910*0.10;
@@ -38,7 +36,6 @@ public class Review01 {
     //※taxメソッドは消費税額（商品価格の10％）が戻り値となるメソッドにしてください
     //条件的に消費税価格の計算のみreturn
     }
-
 }
 
 //補足確認観点：問題文の指示戻り値は何処か、そもそも戻り値はあるのか？呼び出しメソッドaddは任意　int型かdobule型（ダブル）か。
